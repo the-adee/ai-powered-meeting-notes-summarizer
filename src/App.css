@@ -48,7 +48,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding-bottom: 120px; /* Space for the docked footer */
 }
 
 /* Input Section */
@@ -590,154 +589,74 @@ textarea:focus, input[type="text"]:focus {
   cursor: not-allowed;
 }
 
-/* Footer - macOS Dock Style */
-.app-footer {
+/* Floating GitHub Button */
+.github-floating-button {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 15px 25px;
-  background: rgba(255, 255, 255, 0.15);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 25px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  max-width: 90vw;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.app-footer:hover {
-  transform: translateX(-50%) translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.footer-content {
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+  border: 2px solid #e9ecef;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  position: relative;
-  z-index: 1;
-}
-
-.footer-text {
-  color: #333;
-  font-size: 0.85rem;
-  margin: 0;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  white-space: nowrap;
-}
-
-.tech-stack {
-  font-weight: 700;
-  color: #667eea;
-  position: relative;
-  transition: all 0.2s ease;
-}
-
-.tech-stack:hover {
-  color: #5a67d8;
-  transform: scale(1.05);
-}
-
-.footer-links {
-  display: flex;
-  align-items: center;
-}
-
-.github-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: rgba(0, 0, 0, 0.1);
-  color: #333;
   text-decoration: none;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-}
-
-.github-link:hover {
-  background: rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   color: #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 1000;
 }
 
-.github-icon {
-  width: 16px;
-  height: 16px;
+.github-floating-button:hover {
+  background: #f8f9fa;
+  border-color: #667eea;
+  color: #667eea;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.github-floating-button .github-icon {
+  width: 24px;
+  height: 24px;
   transition: transform 0.2s ease;
 }
 
-.github-link:hover .github-icon {
+.github-floating-button:hover .github-icon {
   transform: scale(1.1);
 }
 
-.github-text {
-  font-weight: 600;
-}
-
-/* Dock Footer responsive design */
+/* Responsive positioning for floating button */
 @media (max-width: 768px) {
-  .app-footer {
-    bottom: 15px;
-    padding: 12px 20px;
-    border-radius: 20px;
+  .github-floating-button {
+    width: 45px;
+    height: 45px;
+    right: 20px;
+    bottom: 20px;
   }
   
-  .footer-content {
-    gap: 15px;
-  }
-  
-  .footer-text {
-    font-size: 0.75rem;
-  }
-  
-  .github-link {
-    padding: 6px 12px;
-    font-size: 0.75rem;
-  }
-  
-  .github-icon {
-    width: 14px;
-    height: 14px;
+  .github-floating-button .github-icon {
+    width: 20px;
+    height: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .app-footer {
-    bottom: 10px;
-    padding: 10px 15px;
-    max-width: 95vw;
+  .github-floating-button {
+    width: 40px;
+    height: 40px;
+    right: 15px;
+    bottom: 15px;
   }
   
-  .footer-content {
-    flex-direction: column;
-    gap: 8px;
+  .github-floating-button:hover {
+    transform: scale(1.1);
   }
   
-  .footer-text {
-    font-size: 0.7rem;
-    text-align: center;
-  }
-  
-  .tech-stack {
-    display: inline-block;
-  }
-  
-  .github-link {
-    padding: 6px 10px;
-    font-size: 0.7rem;
+  .github-floating-button .github-icon {
+    width: 18px;
+    height: 18px;
   }
 }
 
