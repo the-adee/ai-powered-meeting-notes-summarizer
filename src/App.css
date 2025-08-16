@@ -237,6 +237,7 @@ textarea:focus, input[type="text"]:focus {
   font-size: 0.9rem;
   line-height: 1.6;
   background-color: #f8f9fa;
+  color: black;
   border: 2px solid #e9ecef;
 }
 
