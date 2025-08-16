@@ -16,7 +16,7 @@ interface EmailRequest {
   originalNotes?: string;
 }
 
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 // Function to convert simple Markdown to HTML for display
 const convertMarkdownToHtml = (text: string): string => {
